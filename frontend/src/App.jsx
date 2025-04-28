@@ -14,6 +14,8 @@ import AdminPanel from './pages/AdminPanel';
 import HorsePage from './pages/HorsePage';
 import HorseDetails from './pages/HorseDetails';
 import HorsesForTasks from './pages/HorsesForTasks';
+import HorseTask from './pages/HorseTask';
+
 
 
 
@@ -135,6 +137,24 @@ function App() {
               </ProtectedRoutes>
             }
           />
+          <Route
+            path="/horses/for-tasks/:stableId"
+            element={
+              <ProtectedRoutes>
+                <HorsesForTasks />
+              </ProtectedRoutes>
+            }
+          />
+                <Route
+        path="/tasks/horse/:horseId"
+        element={
+          <ProtectedRoutes>
+            <HorseTask />
+          </ProtectedRoutes>
+        }
+      />
+
+
         </Routes>
         
       </Router>

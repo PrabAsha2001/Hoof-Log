@@ -6,7 +6,7 @@ import UserTable from "../components/UserTable"; // We'll create this next
 import HorseTable from "../components/HorseTable"; // Placeholder, you can implement later
 
 const AdminPanel = () => {
-  const { user, isCheckingAuth,checkAuth } = useAuthStore();
+  const { user, isCheckingAuth } = useAuthStore();
   const [activeTab, setActiveTab] = useState("user"); // default to user table
 
   const today = new Date().toLocaleDateString("en-US", {
@@ -18,11 +18,6 @@ const AdminPanel = () => {
 
   console.log("🧠 Zustand raw state:", useAuthStore.getState());
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     checkAuth(); // Fetch user info again on AdminPanel mount
-  //   }
-  // }, []);
 
   useEffect(() => {
     if (user) {
